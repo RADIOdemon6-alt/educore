@@ -64,9 +64,9 @@ body, html {
 .login-container {
   position: relative;
   z-index: 1;
-  background: rgba(10, 0, 30, 0.85); /* داكن شبه شفاف */
+  background: rgba(10, 0, 30, 0.85);
   backdrop-filter: blur(15px);
-  padding: 80px 25px 25px 25px; /* مساحة داخلية للكارد مع ترك مكان للصورة */
+  padding: 80px 25px 25px 25px; /* مساحة إضافية لتناسب الصورة */
   border-radius: 20px;
   box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
   width: 90%;
@@ -83,7 +83,7 @@ body, html {
 
 /* العنوان */
 .login-container h2 {
-  margin-top: 20px; /* أقل لأن الصورة فوق الكارد */
+  margin-top: 20px; /* أقل من السابق */
   margin-bottom: 20px;
   font-size: 1.6em;
   color: #0ff;
@@ -180,7 +180,7 @@ body, html {
   align-items: center;
 
   position: absolute; 
-  top: -50px; /* تجعل الصورة فوق الكارد */
+  top: -50px; /* لتكون فوق الكارد بشكل أنيق */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
