@@ -166,6 +166,7 @@ body, html {
 }
 
 /* إطار الصورة الدائري متصل بالكارد */
+/* إطار الصورة الدائري متصل بالكارد */
 .card-avatar {
   width: 100px;
   height: 100px;
@@ -179,9 +180,9 @@ body, html {
   align-items: center;
 
   position: absolute; 
-  top: 0; /* على حافة الكارد */
+  top: 20px; /* نزلنا الصورة قليلًا عن الكارد */
   left: 50%;
-  transform: translate(-50%, -50%); /* نصف الصورة فوق الكارد ونصفها على الكارد */
+  transform: translateX(-50%); /* إزالة translateY لتكون الصورة أسفل قليلاً */
   z-index: 2;
 }
 
