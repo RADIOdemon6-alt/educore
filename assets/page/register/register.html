@@ -1,13 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسجيل حساب جديد</title>
-  <link rel="stylesheet" href="register.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تسجيل حساب جديد</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="register.css">
 </head>
 <body>
+  <!-- خلفية الدوائر النيون -->
   <div class="background">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -15,20 +16,43 @@
   </div>
 
   <div class="register-home">
-    <div class="account-card" data-link="forms/student/student.home.html">
-      <h2>طالب</h2>
-      <p>قم بتسجيل حسابك كطالب للوصول إلى المواد والدروس.</p>
-    </div>
-    <div class="account-card" data-link="forms/center/center.home.html">
-      <h2>إدارة</h2>
-      <p>قم بتسجيل حساب إدارة للتحكم بالمواد والطلاب والمعلمين.</p>
-    </div>
-    <div class="account-card" data-link="forms/teacher/teacher.home.html">
-      <h2>معلم</h2>
-      <p>قم بتسجيل حسابك كمعلم لإدارة الدروس والطلاب.</p>
-    </div>
+    <!-- الفورم -->
+    <form class="register-form">
+      <!-- صورة فوق الفورم -->
+      <div class="card-avatar">
+        <img src="assets/img/avatar.png" alt="Avatar">
+      </div>
+
+      <!-- العنوان الرئيسي -->
+      <h1>اختر نوع الحساب</h1>
+
+      <!-- الكروت -->
+      <div class="account-card" data-link="forms/student/student.home.html">
+        <div class="icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <div class="content">
+          <h2>طالب</h2>
+          <p>قم بتسجيل حسابك كطالب للوصول إلى المواد والدروس.</p>
+        </div>
+      </div>
+
+      <div class="account-card" data-link="forms/center/center.home.html">
+        <div class="icon"><i class="fa-solid fa-building"></i></div>
+        <div class="content">
+          <h2>إدارة</h2>
+          <p>قم بتسجيل حساب إدارة للتحكم بالمواد والطلاب والمعلمين.</p>
+        </div>
+      </div>
+
+      <div class="account-card" data-link="forms/teacher/teacher.home.html">
+        <div class="icon"><i class="fa-solid fa-chalkboard-teacher"></i></div>
+        <div class="content">
+          <h2>معلم</h2>
+          <p>قم بتسجيل حسابك كمعلم لإدارة الدروس والطلاب.</p>
+        </div>
+      </div>
+    </form>
   </div>
 
-  <script src="register.js"></script>
+<script src="register.js"></script>
 </body>
 </html>
