@@ -1,155 +1,55 @@
-/* خلفية متدرجة نيون */
 body {
   font-family: Tahoma, Arial, sans-serif;
   direction: rtl;
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  background: linear-gradient(135deg, #00f0ff, #8a00ff, #39ff14);
-  background-size: 400% 400%;
-  animation: gradientBG 10s ease infinite;
+  height: 100vh;
+  background: #f5f5f5;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* دوائر خلفية متحركة */
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.background span {
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 50px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 50%;
-  animation: move 20s linear infinite;
-  bottom: -150px;
-}
-
-.background span:nth-child(1) {
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.background span:nth-child(2) {
-  left: 30%;
-  animation-delay: 2s;
-  width: 70px;
-  height: 70px;
-}
-
-.background span:nth-child(3) {
-  left: 50%;
-  animation-delay: 4s;
-}
-
-.background span:nth-child(4) {
-  left: 70%;
-  animation-delay: 6s;
-  width: 90px;
-  height: 90px;
-}
-
-.background span:nth-child(5) {
-  left: 90%;
-  animation-delay: 8s;
-}
-
-@keyframes move {
-  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-  100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; }
-}
-
-/* صندوق تسجيل الدخول - Glassmorphism */
 .login-box {
-  position: relative;
-  z-index: 1;
   width: 350px;
-  padding: 25px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
-  color: #fff;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
 .login-box h2 {
-  margin-bottom: 20px;
   text-align: center;
-  color: #fff;
-  text-shadow: 0 0 10px #39ff14;
+  margin-bottom: 20px;
 }
 
 .login-box label {
   display: block;
   margin: 10px 0 5px;
-  font-size: 14px;
 }
 
 .login-box input,
 .login-box select {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   margin-bottom: 15px;
-  border: 2px solid #39ff14;
-  border-radius: 8px;
-  background: transparent;
-  color: #fff;
-  outline: none;
-  transition: 0.3s;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.login-box input:focus,
-.login-box select:focus {
-  border-color: #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
-}
-
-.login-box button {
+button {
   width: 100%;
-  padding: 12px;
-  background: #39ff14;
+  padding: 10px;
+  background: #4CAF50;
   border: none;
-  color: #000;
+  color: white;
   font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: 0.3s;
 }
 
-.login-box button:hover {
-  background: #00ff80;
-  box-shadow: 0 0 20px #39ff14;
-}
-
-.extra {
-  text-align: center;
-  margin-top: 15px;
-}
-
-.extra a {
-  color: #00f0ff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.extra a:hover {
-  text-decoration: underline;
+button:hover {
+  background: #45a049;
 }
 
 .hidden {
   display: none;
-  }
+}
