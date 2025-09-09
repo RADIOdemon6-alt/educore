@@ -1,21 +1,31 @@
-/* إعداد الثيم الجديد - Dark Neon كامل */
+/* ============================== */
+/* الثيم الكامل - Dark Neon */
+/* ============================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif;
 }
 
 body, html {
   height: 100%;
-  font-family: 'Arial', sans-serif;
-  overflow-x: hidden;
   background: radial-gradient(circle at center, #0a001f, #000010 85%);
   color: #fff;
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
-/* خلفية دوائر نيون متحركة */
+/* الخلفية النيون */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
 .background .circle {
   position: absolute;
   border-radius: 50%;
@@ -24,160 +34,119 @@ body, html {
   filter: blur(8px);
   mix-blend-mode: screen;
 }
+.background .circle:nth-child(1){width:200px;height:200px;top:10%;left:10%;background:#0ff;box-shadow:0 0 60px #0ff,0 0 120px #0ff;}
+.background .circle:nth-child(2){width:260px;height:260px;top:60%;left:75%;background:#f0f;box-shadow:0 0 70px #f0f,0 0 140px #f0f;}
+.background .circle:nth-child(3){width:150px;height:150px;top:75%;left:40%;background:#0f0;box-shadow:0 0 45px #0f0,0 0 90px #0f0;}
+@keyframes float {0%{transform:translate(0,0) scale(1);}25%{transform:translate(40px,-30px) scale(1.05);}50%{transform:translate(-35px,35px) scale(1.1);}75%{transform:translate(25px,-40px) scale(1.05);}100%{transform:translate(0,0) scale(1);}}
 
-.background .circle:nth-child(1) {
-  width: 200px; height: 200px;
-  top: 10%; left: 10%;
-  background: #0ff;
-  box-shadow: 0 0 60px #0ff, 0 0 120px #0ff;
-}
-
-.background .circle:nth-child(2) {
-  width: 260px; height: 260px;
-  top: 60%; left: 75%;
-  background: #f0f;
-  box-shadow: 0 0 70px #f0f, 0 0 140px #f0f;
-}
-
-.background .circle:nth-child(3) {
-  width: 150px; height: 150px;
-  top: 75%; left: 40%;
-  background: #0f0;
-  box-shadow: 0 0 45px #0f0, 0 0 90px #0f0;
-}
-
-@keyframes float {
-  0% { transform: translate(0,0) scale(1); }
-  25% { transform: translate(40px, -30px) scale(1.05); }
-  50% { transform: translate(-35px, 35px) scale(1.1); }
-  75% { transform: translate(25px, -40px) scale(1.05); }
-  100% { transform: translate(0,0) scale(1); }
-}
-
-/* عنوان الصفحة */
-.register-home h1 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2.2em;
-  color: #0ff;
-  text-shadow: 0 0 12px #0ff, 0 0 25px #0ff;
-}
-
-/* مجموعة البطاقات */
+/* الفورم */
 .register-home {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
   position: relative;
   z-index: 1;
-  padding: 0 20px;
+  width: 100%;
+  max-width: 800px;
+  padding: 80px 20px 40px;
 }
 
-/* بطاقة الحساب الممتدة */
-.account-card {
-  width: 100%;                   /* ممتد من أول لآخر الصفحة */
-  max-width: 1200px;             /* حد أقصى للعرض */
-  margin: 0 auto;                /* مركز الكارد */
-  background: rgba(10, 0, 30, 0.3);  /* شفاف خفيف بدون أسود قاتم */
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
-  cursor: pointer;
-  transition: transform 0.4s, box-shadow 0.4s;
-  padding: 25px 40px;
-  text-align: left;
+.register-form {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   gap: 25px;
-}
-
-/* حركة الكارد عند Hover */
-.account-card:hover {
-  transform: translateY(-5px) scale(1.02);
+  background: rgba(10,0,30,0.3);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 60px 20px 40px;
   box-shadow: 0 0 30px #0ff, 0 0 60px #f0f inset;
 }
 
-/* أيقونة داخل الكارد */
-.account-card .icon {
-  font-size: 3em;
+/* ============================== */
+/* صورة دائرية فوق الفورم */
+/* ============================== */
+.card-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 4px solid #0ff;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset;
+  overflow: hidden;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.card-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* عنوان رئيسي للفورم */
+.register-form h1 {
+  text-align: center;
+  font-size: 2em;
   color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-  transition: transform 0.3s;
+  text-shadow: 0 0 10px #0ff, 0 0 25px #0ff;
+  margin-bottom: 20px;
 }
 
-.account-card:hover .icon {
-  transform: rotate(10deg) scale(1.2);
+/* الكروت */
+.account-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 25px;
+  background: rgba(0,0,0,0.2);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #f0f inset;
+}
+.account-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
 }
 
-/* محتوى النص */
+/* الأيقونات داخل الكارد */
+.account-card .icon {
+  font-size: 2.5em;
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  flex-shrink: 0;
+}
+
+/* محتوى الكارد */
 .account-card .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: right; /* العنوان على اليمين */
   flex: 1;
 }
-
-/* العنوان داخل الكارد */
 .account-card h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
+  margin-bottom: 5px;
   color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 25px #0ff;
-  margin-bottom: 8px;
+  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
 }
-
-/* الشرح داخل الكارد */
 .account-card p {
   font-size: 1em;
   color: #aaa;
-  line-height: 1.4em;
-  text-align: justify;        /* توزيع النص مثل »»»»»»» */
-  direction: rtl;             /* اتجاه من اليمين لليسار */
+  line-height: 1.3em;
+  text-align: justify;
+  direction: rtl;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .account-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-
-  .account-card .icon {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-  }
-
-  .account-card h2 {
-    font-size: 1.5em;
-  }
-
-  .account-card p {
-    font-size: 0.95em;
-  }
+/* Responsive */
+@media (max-width: 768px){
+  .register-form {padding: 80px 15px 40px;}
+  .account-card {flex-direction: column; text-align: center;}
+  .account-card .icon {margin-bottom: 10px;}
 }
-
-@media (max-width: 480px) {
-  .register-home {
-    padding: 0 10px;
-  }
-
-  .account-card {
-    padding: 15px;
-  }
-
-  .account-card h2 {
-    font-size: 1.3em;
-  }
-
-  .account-card .icon {
-    font-size: 2em;
-  }
-
-  .account-card p {
-    font-size: 0.9em;
-  }
-  }
