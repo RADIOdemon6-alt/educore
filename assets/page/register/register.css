@@ -44,38 +44,38 @@ body, html {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 800px;
-  padding: 80px 20px 40px;
+  max-width: 500px; /* صغر حجم الفورم */
+  padding: 60px 20px 30px;
 }
 
 .register-form {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   background: rgba(10,0,30,0.3);
   backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 60px 20px 40px;
-  box-shadow: 0 0 30px #0ff, 0 0 60px #f0f inset;
+  border-radius: 15px;
+  padding: 40px 15px 30px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
 }
 
 /* ============================== */
 /* صورة دائرية فوق الفورم */
 /* ============================== */
 .card-avatar {
-  width: 100px;
-  height: 100px;
+  width: 80px;  /* تصغير الصورة قليلاً */
+  height: 80px;
   border-radius: 50%;
-  border: 4px solid #0ff;
-  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset;
+  border: 3px solid #0ff;
+  box-shadow: 0 0 12px #0ff, 0 0 25px #0ff inset;
   overflow: hidden;
   background: rgba(0,0,0,0.2);
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -50px;
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -90,10 +90,10 @@ body, html {
 /* عنوان رئيسي للفورم */
 .register-form h1 {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.8em;
   color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 25px #0ff;
-  margin-bottom: 20px;
+  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  margin-bottom: 15px;
 }
 
 /* الكروت */
@@ -101,24 +101,25 @@ body, html {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  padding: 15px 25px;
+  gap: 15px;
+  padding: 10px 15px; /* حجم أصغر للكارد */
   background: rgba(0,0,0,0.2);
-  border-radius: 15px;
+  border-radius: 8px; /* أصغر من قبل */
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 15px #0ff, 0 0 30px #f0f inset;
+  box-shadow: 0 0 12px #0ff, 0 0 25px #f0f inset;
+  font-size: 0.95em; /* تصغير نص الكارد */
 }
 .account-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
 }
 
 /* الأيقونات داخل الكارد */
 .account-card .icon {
-  font-size: 2.5em;
+  font-size: 2em; /* أصغر قليلاً */
   color: #0ff;
-  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  text-shadow: 0 0 6px #0ff, 0 0 15px #0ff;
   flex-shrink: 0;
 }
 
@@ -127,26 +128,26 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: right; /* العنوان على اليمين */
+  text-align: right;
   flex: 1;
 }
 .account-card h2 {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+  font-size: 1.2em;
+  margin-bottom: 3px;
   color: #0ff;
-  text-shadow: 0 0 8px #0ff, 0 0 20px #0ff;
+  text-shadow: 0 0 6px #0ff, 0 0 15px #0ff;
 }
 .account-card p {
-  font-size: 1em;
+  font-size: 0.9em;
   color: #aaa;
-  line-height: 1.3em;
+  line-height: 1.2em;
   text-align: justify;
   direction: rtl;
 }
 
 /* Responsive */
 @media (max-width: 768px){
-  .register-form {padding: 80px 15px 40px;}
-  .account-card {flex-direction: column; text-align: center;}
-  .account-card .icon {margin-bottom: 10px;}
+  .register-form {padding: 60px 15px 25px;}
+  .account-card {flex-direction: column; text-align: center; padding: 12px;}
+  .account-card .icon {margin-bottom: 8px;}
 }
