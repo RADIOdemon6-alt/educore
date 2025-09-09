@@ -13,11 +13,14 @@
     <div class="circle"></div>
     <div class="circle"></div>
   </div>
-<div class="card-avatar">
-  <img src="assets/img/avatar.png" alt="Avatar">
-</div>
+
   <!-- بطاقة تسجيل الدخول -->
   <div class="login-container">
+    <!-- إطار الصورة فوق الكارد -->
+    <div class="card-avatar">
+      <img src="assets/img/avatar.png" alt="Avatar">
+    </div>
+
     <h2>تسجيل الدخول</h2>
     <form id="loginForm">
       <input type="email" id="email" placeholder="البريد الإلكتروني" required>
@@ -31,13 +34,13 @@
       <button type="submit">دخول</button>
       <p id="error" class="error-msg"></p>
     </form>
-    <p>ليس لديك حساب؟ <a href="../assets/page/register/register.html">سجل الآن</a></p>
+    <p>ليس لديك حساب؟ <a href="../register/register.html">سجل الآن</a></p>
   </div>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
