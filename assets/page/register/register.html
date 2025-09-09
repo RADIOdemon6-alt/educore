@@ -1,42 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>اختيار نوع الحساب</title>
-  <link rel="stylesheet" href="../../style.css">
+  <title>تسجيل حساب جديد</title>
+  <link rel="stylesheet" href="register.css">
 </head>
 <body>
-  <!-- خلفية دوائر نيون -->
   <div class="background">
     <div class="circle"></div>
     <div class="circle"></div>
     <div class="circle"></div>
   </div>
 
-  <div class="login-container">
-    <h2>اختر نوع الحساب</h2>
-    <div class="account-cards">
-
-      <!-- بطاقة الطالب -->
-      <div class="account-card" onclick="location.href='forms/student/student.home.html'">
-        <h2>طالب</h2>
-        <p>أنشئ حساب طالب لتسجيل بياناتك والانضمام للمجموعات الدراسية.</p>
-      </div>
-
-      <!-- بطاقة المعلم -->
-      <div class="account-card" onclick="location.href='forms/teacher/teacher.home.html'">
-        <h2>معلم</h2>
-        <p>أنشئ حساب معلم لإدارة طلابك ومجموعاتك الدراسية بسهولة.</p>
-      </div>
-
-      <!-- بطاقة الإدارة -->
-      <div class="account-card" onclick="location.href='forms/center/center.home.html'">
-        <h2>إدارة</h2>
-        <p>حساب الإدارة للتحكم في المنصة ومتابعة المعلمين والطلاب.</p>
-      </div>
-
+  <div class="register-home">
+    <div class="account-card" data-link="forms/student/student.home.html">
+      <h2>طالب</h2>
+      <p>قم بتسجيل حسابك كطالب للوصول إلى المواد والدروس.</p>
+    </div>
+    <div class="account-card" data-link="forms/center/center.home.html">
+      <h2>إدارة</h2>
+      <p>قم بتسجيل حساب إدارة للتحكم بالمواد والطلاب والمعلمين.</p>
+    </div>
+    <div class="account-card" data-link="forms/teacher/teacher.home.html">
+      <h2>معلم</h2>
+      <p>قم بتسجيل حسابك كمعلم لإدارة الدروس والطلاب.</p>
     </div>
   </div>
+
+  <script src="register.js"></script>
 </body>
 </html>
