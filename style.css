@@ -59,13 +59,14 @@ body, html {
   75% { transform: translate(20px, -30px) scale(1.05); }
   100% { transform: translate(0,0) scale(1); }
 }
-/* بطاقة تسجيل الدخول - Dark Neon محدثة */
+
+/* بطاقة تسجيل الدخول - Dark Neon */
 .login-container {
   position: relative;
   z-index: 1;
   background: rgba(10, 0, 30, 0.85); /* داكن شبه شفاف */
   backdrop-filter: blur(15px);
-  padding: 60px 25px 25px 25px; /* مساحة داخلية للكارد */
+  padding: 80px 25px 25px 25px; /* مساحة داخلية للكارد مع ترك مكان للصورة */
   border-radius: 20px;
   box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
   width: 90%;
@@ -82,7 +83,7 @@ body, html {
 
 /* العنوان */
 .login-container h2 {
-  margin-top: 50px; /* مسافة عن الصورة */
+  margin-top: 20px; /* أقل لأن الصورة فوق الكارد */
   margin-bottom: 20px;
   font-size: 1.6em;
   color: #0ff;
@@ -149,7 +150,7 @@ body, html {
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .login-container {
-    padding: 50px 20px 20px 20px;
+    padding: 70px 20px 20px 20px;
     width: 95%;
   }
 
@@ -166,7 +167,6 @@ body, html {
 }
 
 /* إطار الصورة الدائري متصل بالكارد */
-/* إطار الصورة الدائري متصل بالكارد */
 .card-avatar {
   width: 100px;
   height: 100px;
@@ -180,9 +180,9 @@ body, html {
   align-items: center;
 
   position: absolute; 
-  top: 20px; /* نزلنا الصورة قليلًا عن الكارد */
+  top: -50px; /* تجعل الصورة فوق الكارد */
   left: 50%;
-  transform: translateX(-50%); /* إزالة translateY لتكون الصورة أسفل قليلاً */
+  transform: translateX(-50%);
   z-index: 2;
 }
 
