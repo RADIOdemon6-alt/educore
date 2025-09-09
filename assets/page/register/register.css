@@ -1,4 +1,4 @@
-/* إعداد الثيم الجديد - Dark Neon مطور */
+/* إعداد الثيم الجديد - Dark Neon كامل */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,10 +8,7 @@
 body, html {
   height: 100%;
   font-family: 'Arial', sans-serif;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow-x: hidden;
   background: radial-gradient(circle at center, #0a001f, #000010 85%);
   color: #fff;
   text-align: center;
@@ -22,13 +19,12 @@ body, html {
 .background .circle {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.25;
+  opacity: 0.2;
   animation: float 25s ease-in-out infinite alternate;
   filter: blur(8px);
   mix-blend-mode: screen;
 }
 
-/* مواقع الدوائر */
 .background .circle:nth-child(1) {
   width: 200px; height: 200px;
   top: 10%; left: 10%;
@@ -71,39 +67,41 @@ body, html {
 /* مجموعة البطاقات */
 .register-home {
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
   position: relative;
   z-index: 1;
+  padding: 0 20px;
 }
 
-/* بطاقة الحساب المستطيلة */
+/* بطاقة الحساب الممتدة */
 .account-card {
-  width: 320px;       
-  height: 140px;      
-  background: rgba(10, 0, 30, 0.85);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;       
-  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
+  width: 100%;                   /* ممتد من أول لآخر الصفحة */
+  max-width: 1200px;             /* حد أقصى للعرض */
+  margin: 0 auto;                /* مركز الكارد */
+  background: rgba(10, 0, 30, 0.3);  /* شفاف خفيف بدون أسود قاتم */
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
   cursor: pointer;
   transition: transform 0.4s, box-shadow 0.4s;
-  display: flex;
-  flex-direction: row; /* أفقي */
-  justify-content: flex-start;
-  align-items: center;
+  padding: 25px 40px;
   text-align: left;
-  padding: 15px;
-  gap: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25px;
 }
 
+/* حركة الكارد عند Hover */
 .account-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 0 35px #0ff, 0 0 70px #f0f inset;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 30px #0ff, 0 0 60px #f0f inset;
 }
 
-/* أيقونات داخل الكارد */
+/* أيقونة داخل الكارد */
 .account-card .icon {
   font-size: 3em;
   color: #0ff;
@@ -120,43 +118,66 @@ body, html {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 }
 
+/* العنوان داخل الكارد */
 .account-card h2 {
-  margin-bottom: 5px;
-  font-size: 1.5em;
+  font-size: 1.8em;
   color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 25px #0ff;
+  margin-bottom: 8px;
 }
 
+/* الشرح داخل الكارد */
 .account-card p {
-  font-size: 0.95em;
+  font-size: 1em;
   color: #aaa;
-  line-height: 1.3em;
+  line-height: 1.4em;
+  text-align: justify;        /* توزيع النص مثل »»»»»»» */
+  direction: rtl;             /* اتجاه من اليمين لليسار */
 }
 
 /* Responsive adjustments */
-@media (max-width: 480px) {
-  .register-home {
-    flex-direction: column;
-  }
-  
+@media (max-width: 768px) {
   .account-card {
-    width: 260px;
-    height: 120px;
-    padding: 10px;
-  }
-
-  .account-card h2 {
-    font-size: 1.2em;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
   }
 
   .account-card .icon {
     font-size: 2.5em;
+    margin-bottom: 10px;
   }
 
-  .register-home h1 {
-    font-size: 1.7em;
-    margin-bottom: 25px;
+  .account-card h2 {
+    font-size: 1.5em;
+  }
+
+  .account-card p {
+    font-size: 0.95em;
   }
 }
+
+@media (max-width: 480px) {
+  .register-home {
+    padding: 0 10px;
+  }
+
+  .account-card {
+    padding: 15px;
+  }
+
+  .account-card h2 {
+    font-size: 1.3em;
+  }
+
+  .account-card .icon {
+    font-size: 2em;
+  }
+
+  .account-card p {
+    font-size: 0.9em;
+  }
+  }
