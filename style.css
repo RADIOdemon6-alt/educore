@@ -1,4 +1,4 @@
-/* إعداد الثيم */
+/* إعداد الثيم الجديد - Dark Neon */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -9,110 +9,126 @@ body, html {
   height: 100%;
   font-family: 'Arial', sans-serif;
   overflow: hidden;
-  background: linear-gradient(120deg, #0ff, #a0f, #0f0);
   display: flex;
   justify-content: center;
   align-items: center;
+  background: radial-gradient(circle at center, #0a001f, #000010 80%);
   color: #fff;
   text-align: center;
+  position: relative;
 }
 
-/* دوائر متحركة */
+/* دوائر نيون متحركة */
 .background .circle {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.25;
-  animation: move 12s linear infinite;
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+  filter: blur(6px);
+  mix-blend-mode: screen;
 }
 
 .background .circle:nth-child(1) {
-  width: 120px; height: 120px;
-  top: 5%; left: 15%;
-  background: rgba(0,255,255,0.3);
-  animation-duration: 14s;
+  width: 160px; height: 160px;
+  top: 15%; left: 20%;
+  background: #0ff;
+  box-shadow: 0 0 40px #0ff, 0 0 80px #0ff;
+  animation-duration: 18s;
 }
 
 .background .circle:nth-child(2) {
-  width: 180px; height: 180px;
-  top: 45%; left: 65%;
-  background: rgba(255,0,255,0.3);
-  animation-duration: 16s;
+  width: 220px; height: 220px;
+  top: 50%; left: 65%;
+  background: #f0f;
+  box-shadow: 0 0 50px #f0f, 0 0 100px #f0f;
+  animation-duration: 22s;
 }
 
 .background .circle:nth-child(3) {
-  width: 100px; height: 100px;
-  top: 70%; left: 35%;
-  background: rgba(0,255,0,0.3);
-  animation-duration: 12s;
+  width: 120px; height: 120px;
+  top: 70%; left: 40%;
+  background: #0f0;
+  box-shadow: 0 0 35px #0f0, 0 0 70px #0f0;
+  animation-duration: 20s;
 }
 
-@keyframes move {
-  0% { transform: translate(0,0) scale(1);}
-  50% { transform: translate(25px, -25px) scale(1.1);}
-  100% { transform: translate(0,0) scale(1);}
+@keyframes float {
+  0% { transform: translate(0,0) scale(1); }
+  25% { transform: translate(30px, -20px) scale(1.05); }
+  50% { transform: translate(-25px, 25px) scale(1.1); }
+  75% { transform: translate(20px, -30px) scale(1.05); }
+  100% { transform: translate(0,0) scale(1); }
 }
 
 /* بطاقة تسجيل الدخول */
 .login-container {
   position: relative;
   z-index: 1;
-  background: rgba(30, 0, 50, 0.7);
-  backdrop-filter: blur(12px);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 0 30px #0ff;
+  background: rgba(10, 0, 30, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
   width: 90%;
-  max-width: 320px;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.5s;
+}
+
+.login-container:hover {
+  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
 }
 
 /* العنوان */
 .login-container h2 {
-  margin-bottom: 15px;
-  font-size: 1.4em;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  color: #0ff;
+  text-shadow: 0 0 8px #0ff, 0 0 12px #0ff;
 }
 
 /* Inputs & select */
 .login-container input,
 .login-container select {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 14px;
+  margin: 10px 0;
   border: 2px solid #0ff;
-  border-radius: 10px;
+  border-radius: 12px;
   background: rgba(0,0,0,0.25);
   color: #fff;
   font-size: 1em;
   outline: none;
   transition: 0.3s;
-  -webkit-appearance: none; /* لإظهار الـ select بشكل موحد على Chrome */
+  -webkit-appearance: none;
   appearance: none;
 }
 
 .login-container input:focus,
 .login-container select:focus {
-  border-color: #0f0;
-  box-shadow: 0 0 8px #0f0;
+  border-color: #f0f;
+  box-shadow: 0 0 10px #f0f, 0 0 20px #f0f inset;
 }
 
 /* زر تسجيل الدخول */
 .login-container button {
   width: 100%;
-  padding: 12px;
-  margin-top: 12px;
+  padding: 14px;
+  margin-top: 15px;
   border: none;
-  border-radius: 10px;
-  background: #0f0;
+  border-radius: 12px;
+  background: #0ff;
   color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 0 10px #0ff;
 }
 
 .login-container button:hover {
-  box-shadow: 0 0 15px #0f0;
+  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
   transform: scale(1.05);
 }
 
@@ -133,18 +149,18 @@ body, html {
 /* Responsive adjustments */
 @media (max-width: 480px) {
   .login-container {
-    padding: 18px;
+    padding: 20px;
     width: 95%;
   }
 
   .login-container h2 {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   .login-container input,
   .login-container select,
   .login-container button {
     font-size: 0.95em;
-    padding: 10px;
+    padding: 12px;
   }
-  }
+}
