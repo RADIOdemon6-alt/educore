@@ -60,7 +60,17 @@ body, html {
   100% { transform: translate(0,0) scale(1); }
 }
 
-/* بطاقة الحساب */
+/* عنوان الصفحة */
+.register-home h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+}
+
+/* مجموعة البطاقات */
 .register-home {
   display: flex;
   gap: 25px;
@@ -71,20 +81,26 @@ body, html {
   z-index: 1;
 }
 
+/* بطاقة الحساب */
 .account-card {
+  width: 200px;       /* العرض */
+  height: 200px;      /* الطول → يجعلها مربعة */
   background: rgba(10, 0, 30, 0.8);
   backdrop-filter: blur(15px);
-  padding: 40px 25px 25px 25px;
-  border-radius: 20px;
+  border-radius: 20px;       /* حواف مستديرة للكارد */
   box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
-  width: 220px;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .account-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
+  box-shadow: 0 0 30px #0ff, 0 0 60px #f0f inset;
 }
 
 .account-card h2 {
@@ -92,9 +108,31 @@ body, html {
   font-size: 1.5em;
   color: #0ff;
   text-shadow: 0 0 8px #0ff, 0 0 12px #0ff;
+  transition: 0.3s;
+}
+
+.account-card:hover h2 {
+  text-shadow: 0 0 15px #0ff, 0 0 30px #f0f;
 }
 
 .account-card p {
   font-size: 0.9em;
   color: #aaa;
-                        }
+  padding: 0 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .register-home {
+    flex-direction: column;
+  }
+  
+  .account-card {
+    width: 180px;
+    height: 180px;
+  }
+
+  .register-home h1 {
+    font-size: 1.5em;
+  }
+}
