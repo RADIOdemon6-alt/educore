@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>تسجيل الدخول</h2>
+    <form id="loginForm">
+      <label>»» اكتب المعرف الخاص بك</label>
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+
+      <label>»» اكتب كلمة المرور الخاصة بك</label>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+
+      <label>نوع المستخدم</label>
+      <select id="userType" required>
+        <option value="student">طالب</option>
+        <option value="parent">ولي أمر</option>
+        <option value="teacher">معلم</option>
+      </select>
+
+      <!-- معلم تابع لسينتر -->
+      <div id="centerOptions" class="hidden">
+        <label>»» تابع لي سينتر؟</label>
+        <select id="isCenter">
+          <option value="no">لا</option>
+          <option value="yes">نعم</option>
+        </select>
+
+        <div id="centerInfo" class="hidden">
+          <label>»» معرف السينتر</label>
+          <input type="text" id="centerId" placeholder="اكتب معرف السينتر">
+
+          <label>»» كلمة مرور السينتر</label>
+          <input type="password" id="centerPassword" placeholder="كلمة مرور السينتر">
+        </div>
+      </div>
+
+      <button type="submit">تسجيل الدخول</button>
+    </form>
+
+    <div class="extra">
+      <p>ليس لديك حساب؟ <a href="register.html">سجل الآن</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
