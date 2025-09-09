@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختيار نوع الحساب</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <!-- خلفية دوائر نيون -->
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <div class="login-container">
+    <h2>اختر نوع الحساب</h2>
+    <div class="account-cards">
+
+      <!-- بطاقة الطالب -->
+      <div class="account-card" onclick="location.href='forms/student/student.home.html'">
+        <h2>طالب</h2>
+        <p>أنشئ حساب طالب لتسجيل بياناتك والانضمام للمجموعات الدراسية.</p>
+      </div>
+
+      <!-- بطاقة المعلم -->
+      <div class="account-card" onclick="location.href='forms/teacher/teacher.home.html'">
+        <h2>معلم</h2>
+        <p>أنشئ حساب معلم لإدارة طلابك ومجموعاتك الدراسية بسهولة.</p>
+      </div>
+
+      <!-- بطاقة الإدارة -->
+      <div class="account-card" onclick="location.href='forms/center/center.home.html'">
+        <h2>إدارة</h2>
+        <p>حساب الإدارة للتحكم في المنصة ومتابعة المعلمين والطلاب.</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
