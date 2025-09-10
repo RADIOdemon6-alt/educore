@@ -1,4 +1,7 @@
-/* إعداد الثيم الجديد - Dark Neon */
+/* استدعاء الخط العربي Cairo */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+/* ثيم Dark Neon - تسجيل الدخول */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,193 +10,151 @@
 
 body, html {
   height: 100%;
-  font-family: 'Arial', sans-serif;
-  overflow: hidden;
+  font-family: 'Cairo', sans-serif;
+  background: #0a001f;
+  color: #fff;
+  text-align: right;
+  direction: rtl;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: radial-gradient(circle at center, #0a001f, #000010 80%);
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-
-/* دوائر نيون متحركة */
-.background .circle {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.15;
-  animation: float 20s ease-in-out infinite;
-  filter: blur(6px);
-  mix-blend-mode: screen;
-}
-
-.background .circle:nth-child(1) {
-  width: 160px; height: 160px;
-  top: 15%; left: 20%;
-  background: #0ff;
-  box-shadow: 0 0 40px #0ff, 0 0 80px #0ff;
-  animation-duration: 18s;
-}
-
-.background .circle:nth-child(2) {
-  width: 220px; height: 220px;
-  top: 50%; left: 65%;
-  background: #f0f;
-  box-shadow: 0 0 50px #f0f, 0 0 100px #f0f;
-  animation-duration: 22s;
-}
-
-.background .circle:nth-child(3) {
-  width: 120px; height: 120px;
-  top: 70%; left: 40%;
-  background: #0f0;
-  box-shadow: 0 0 35px #0f0, 0 0 70px #0f0;
-  animation-duration: 20s;
-}
-
-@keyframes float {
-  0% { transform: translate(0,0) scale(1); }
-  25% { transform: translate(30px, -20px) scale(1.05); }
-  50% { transform: translate(-25px, 25px) scale(1.1); }
-  75% { transform: translate(20px, -30px) scale(1.05); }
-  100% { transform: translate(0,0) scale(1); }
+  overflow-y: auto;
 }
 
 /* بطاقة تسجيل الدخول */
 .login-container {
   position: relative;
   z-index: 1;
-  background: rgba(10, 0, 30, 0.8);
-  backdrop-filter: blur(15px);
-  padding: 80px 25px 25px 25px; /* زيادة padding أعلى للكارد لتناسب الصورة */
-  border-radius: 20px;
-  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
+  background: #0d0d2a;
+  padding: 70px 25px 25px 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,255,255,0.4);
   width: 90%;
-  max-width: 340px;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .login-container:hover {
-  box-shadow: 0 0 25px #0ff, 0 0 50px #f0f inset;
+  box-shadow: 0 0 30px rgba(0,255,255,0.6);
 }
 
-/* إطار الصورة الدائري فوق الكارد */
+/* الصورة (أفاتار) */
 .card-avatar {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  border: 4px solid #0ff;
-  box-shadow: 0 0 15px #0ff, 0 0 30px #0ff inset;
+  border: 3px solid #0ff;
+  box-shadow: 0 0 12px #0ff;
   overflow: hidden;
-  background: rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  position: absolute; /* الصورة فوق الكارد */
-  top: -50px; /* نصف ارتفاع الصورة فوق الكارد */
+  position: absolute;
+  top: -45px;
   left: 50%;
-  transform: translateX(-50%); /* مركزة في المنتصف */
-  z-index: 2;
+  transform: translateX(-50%);
+  background: #111;
 }
 
 .card-avatar img {
-  width: 100%; 
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%;
 }
 
 /* العنوان */
 .login-container h2 {
-  margin-bottom: 20px;
-  font-size: 1.6em;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  font-size: 20px;
+  font-weight: 700;
   color: #0ff;
-  text-shadow: 0 0 8px #0ff, 0 0 12px #0ff;
+  text-align: center;
 }
 
-/* Inputs & select */
+/* حقول الإدخال */
 .login-container input,
 .login-container select {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   margin: 10px 0;
-  border: 2px solid #0ff;
-  border-radius: 12px;
-  background: rgba(0,0,0,0.25);
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #1a1a40;
   color: #fff;
-  font-size: 1em;
+  font-size: 14px;
   outline: none;
   transition: 0.3s;
-  -webkit-appearance: none;
-  appearance: none;
+  direction: rtl;
+  text-align: right;
 }
 
 .login-container input:focus,
 .login-container select:focus {
-  border-color: #f0f;
-  box-shadow: 0 0 10px #f0f, 0 0 20px #f0f inset;
+  border-color: #0ff;
+  box-shadow: 0 0 8px #0ff;
 }
 
-/* زر تسجيل الدخول */
+/* زر الدخول */
 .login-container button {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
   margin-top: 15px;
   border: none;
-  border-radius: 12px;
-  background: #0ff;
+  border-radius: 8px;
+  background: #4cafef;
   color: #000;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 10px #0ff;
+  font-size: 15px;
 }
 
 .login-container button:hover {
-  box-shadow: 0 0 20px #0ff, 0 0 40px #f0f inset;
+  background: #0ff;
+  color: #000;
+  box-shadow: 0 0 12px #0ff;
   transform: scale(1.05);
 }
 
-/* رسالة خطأ */
-.error-msg {
-  color: #ff5555;
-  font-size: 0.9em;
-  margin-top: 5px;
+/* رابط التسجيل */
+.login-container p {
+  margin-top: 10px;
+  font-size: 13px;
 }
 
-/* رابط التسجيل */
 .login-container p a {
   color: #0ff;
   text-decoration: none;
-  font-size: 0.9em;
+  transition: 0.3s;
 }
 
-/* Responsive adjustments */
+.login-container p a:hover {
+  text-decoration: underline;
+}
+
+/* رسالة الخطأ */
+.error-msg {
+  color: #ff5555;
+  font-size: 13px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Responsive */
 @media (max-width: 480px) {
   .login-container {
-    padding: 70px 20px 20px 20px;
     width: 95%;
-  }
-
-  .login-container h2 {
-    font-size: 1.3em;
-  }
-
-  .login-container input,
-  .login-container select,
-  .login-container button {
-    font-size: 0.95em;
-    padding: 12px;
+    padding: 60px 20px 20px 20px;
   }
 
   .card-avatar {
-    width: 80px;
-    height: 80px;
-    top: -40px;
+    width: 70px;
+    height: 70px;
+    top: -35px;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
   }
 }
